@@ -1,3 +1,10 @@
+### [1.1.1](https://github.com/0-vortex/eclass-docker-fork/compare/v1.1.0...v1.1.1) (2021-12-01)
+
+
+### Bug Fixes
+
+* correct ecmascript usage for release info function ([2b104c1](https://github.com/0-vortex/eclass-docker-fork/commit/2b104c19f631f17c3c3c0ffabf6301f772861b29))
+
 ## [1.1.0](https://github.com/0-vortex/eclass-docker-fork/compare/v1.0.0...v1.1.0) (2021-12-01)
 
 

@@ -1,5 +1,4 @@
-export function getReleaseInfo(imageName, tag) {
-  return {
+const getReleaseInfo = (imageName, tag) => ({
     name: `${imageName} container (@${tag} dist-tag)`,
     url: `${imageName}`.replace(
       new RegExp('^((?:ghcr|docker|quay).io)', 'gi'),
@@ -10,5 +9,6 @@ export function getReleaseInfo(imageName, tag) {
       })[matched]
     ),
     channel: tag,
-  }
-}
+  });
+
+module.exports = getReleaseInfo;

@@ -4,7 +4,7 @@ const Dockerode = require('dockerode')
 const getError = require('./get-error')
 const getAuth = require('./getAuth')
 const isTagPushAllowed = require('./is-tag-push-allowed')
-const {getReleaseInfo} = require("./getReleaseInfo");
+const getReleaseInfo = require("./getReleaseInfo");
 
 /** @typedef {import('stream').Readable} ReadableStream */
 /**

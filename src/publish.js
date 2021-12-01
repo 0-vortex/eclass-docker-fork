@@ -80,7 +80,7 @@ module.exports = async (pluginConfig, ctx) => {
 
           if (tag === "latest") {
             latestImage = imageName;
-            latestRegistry = registry;
+            latestRegistry = registry.url;
           }
         } else {
           ctx.logger.log(`Skip push docker image ${imageName}:${tag}`)

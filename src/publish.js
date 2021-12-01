@@ -4,6 +4,7 @@ const Dockerode = require('dockerode')
 const getError = require('./get-error')
 const getAuth = require('./getAuth')
 const isTagPushAllowed = require('./is-tag-push-allowed')
+const {getReleaseInfo} = require("./getReleaseInfo");
 
 /** @typedef {import('stream').Readable} ReadableStream */
 /**
@@ -46,6 +47,9 @@ const pushImage = response => {
  * verifyConditions(pluginConfig, ctx)
  */
 module.exports = async (pluginConfig, ctx) => {
+  let latestImage;
+  let latestTag;
+
   try {
     const docker = new Dockerode()
     const baseImageTag = ctx.env.DOCKER_BASE_IMAGE_TAG || pluginConfig.baseImageTag || 'latest'
@@ -73,9 +77,16 @@ module.exports = async (pluginConfig, ctx) => {
           const response = await image.push({ tag, ...options })
           // @ts-ignore
           await pushImage(response)
+
+          latestImage = imageName;
+          latestTag = tag;
         } else {
           ctx.logger.log(`Skip push docker image ${imageName}:${tag}`)
         }
+      }
+
+      if (latestImage && latestTag) {
+        return getReleaseInfo(latestImage, latestTag);
       }
     }
   } catch (err) {

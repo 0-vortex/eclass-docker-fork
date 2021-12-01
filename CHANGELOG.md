@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/0-vortex/eclass-docker-fork/compare/v1.1.1...v1.2.0) (2021-12-01)
+
+
+### Features
+
+* publish latest dist tag only in release ([ccb5b8d](https://github.com/0-vortex/eclass-docker-fork/commit/ccb5b8db477b014d17523fe563c8215b67b11786))
+
 ### [1.1.1](https://github.com/0-vortex/eclass-docker-fork/compare/v1.1.0...v1.1.1) (2021-12-01)
 
 

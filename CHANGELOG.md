@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/0-vortex/eclass-docker-fork/compare/v1.0.0...v1.1.0) (2021-12-01)
+
+
+### Features
+
+* try adding a release channel ([b935059](https://github.com/0-vortex/eclass-docker-fork/commit/b9350599cb929e51ade3ca5fce48a602c96b941b))
+
 ## 1.0.0 (2021-12-01)
 
 

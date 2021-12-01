@@ -1,0 +1,28 @@
+name: "Release"
+
+on:
+  push:
+    branches:
+      - main
+      - alpha
+      - beta
+
+jobs:
+  release:
+    environment:
+      name: production
+      url: https://github.com/${{ github.repository }}/releases/tag/${{ env.RELEASE_TAG }}
+    name: Semantic release
+    runs-on: ubuntu-latest
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: "🚀 release"
+        id: semantic-release
+        uses: docker://ghcr.io/0-vortex/open-sauced-semantic-config-test:3.20.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

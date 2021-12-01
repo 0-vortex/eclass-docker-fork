@@ -48,7 +48,7 @@ const pushImage = response => {
  */
 module.exports = async (pluginConfig, ctx) => {
   let latestImage;
-  let latestTag;
+  let latestRegistry;
 
   try {
     const docker = new Dockerode()
@@ -78,15 +78,17 @@ module.exports = async (pluginConfig, ctx) => {
           // @ts-ignore
           await pushImage(response)
 
-          latestImage = imageName;
-          latestTag = tag;
+          if (tag === "latest") {
+            latestImage = imageName;
+            latestRegistry = registry;
+          }
         } else {
           ctx.logger.log(`Skip push docker image ${imageName}:${tag}`)
         }
       }
 
-      if (latestImage && latestTag) {
-        return getReleaseInfo(latestImage, latestTag);
+      if (latestImage && latestRegistry) {
+        return getReleaseInfo(latestImage, latestRegistry, "latest");
       }
     }
   } catch (err) {

@@ -1,5 +1,5 @@
-const getReleaseInfo = (imageName, tag) => ({
-    name: `${imageName} container (@${tag} dist-tag)`,
+const getReleaseInfo = (imageName, registry, tag) => ({
+    name: `${registry} container (@${tag} dist-tag)`,
     url: `${imageName}`.replace(
       new RegExp('^((?:ghcr|docker|quay).io)', 'gi'),
       matched => ({

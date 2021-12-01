@@ -1,3 +1,10 @@
+### [1.2.1](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.0...v1.2.1) (2021-12-01)
+
+
+### Bug Fixes
+
+* correct registry url for named release tag ([d685965](https://github.com/0-vortex/eclass-docker-fork/commit/d685965930056ca36dd1e23cbd0d0543e169fbd6))
+
 ## [1.2.0](https://github.com/0-vortex/eclass-docker-fork/compare/v1.1.1...v1.2.0) (2021-12-01)
 
 

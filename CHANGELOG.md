@@ -1,3 +1,10 @@
+### [1.2.5](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.4...v1.2.5) (2021-12-02)
+
+
+### Tests
+
+* proper fix channel and release ([345637c](https://github.com/0-vortex/eclass-docker-fork/commit/345637c86348bb99e545f896eb6fce8ceaa695a6))
+
 ### [1.2.4](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.3...v1.2.4) (2021-12-02)
 
 

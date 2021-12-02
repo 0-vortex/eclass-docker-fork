@@ -52,7 +52,8 @@ module.exports = async (pluginConfig, ctx) => {
 
   try {
     const docker = new Dockerode()
-    const baseImageTag = ctx.env.DOCKER_BASE_IMAGE_TAG || pluginConfig.baseImageTag || 'latest'
+    // const baseImageTag = ctx.env.DOCKER_BASE_IMAGE_TAG || pluginConfig.baseImageTag || 'latest'
+    const baseImageTag = ctx.nextRelease.version;
     console.log(`baseImageTag: ${baseImageTag}`);
     console.log(`ctx.nextRelease.version: ${ctx.nextRelease.version}`);
     console.log(`ctx.nextRelease`, ctx.nextRelease);
@@ -82,7 +83,7 @@ module.exports = async (pluginConfig, ctx) => {
           // @ts-ignore
           await pushImage(response)
 
-          if (tag === "latest") {
+          if (tag === baseImageTag) {
             latestImage = imageName;
             latestRegistry = registry.url;
           }
@@ -91,8 +92,10 @@ module.exports = async (pluginConfig, ctx) => {
         }
       }
 
+      console.log(`latestImage: ${latestImage}`);
+      console.log(`latestRegistry: ${latestRegistry}`);
       if (latestImage && latestRegistry) {
-        return getReleaseInfo(latestImage, latestRegistry, "latest");
+        return getReleaseInfo(latestImage, latestRegistry, baseImageTag);
       }
     }
   } catch (err) {

@@ -55,6 +55,7 @@ module.exports = async (pluginConfig, ctx) => {
     const baseImageTag = ctx.env.DOCKER_BASE_IMAGE_TAG || pluginConfig.baseImageTag || 'latest'
     console.log(`baseImageTag: ${baseImageTag}`);
     console.log(`ctx.nextRelease.version: ${ctx.nextRelease.version}`);
+    console.log(`ctx.nextRelease`, ctx.nextRelease);
 
     const tags = [baseImageTag, ctx.nextRelease.version]
     if (pluginConfig.additionalTags && pluginConfig.additionalTags.length > 0) {

@@ -1,3 +1,10 @@
+### [1.2.3](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.2...v1.2.3) (2021-12-02)
+
+
+### Code Refactoring
+
+* debug context ([89c08c4](https://github.com/0-vortex/eclass-docker-fork/commit/89c08c458f902fe9229159bb74efd4796a2eb41d))
+
 ### [1.2.2](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.1...v1.2.2) (2021-12-02)
 
 

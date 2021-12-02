@@ -53,7 +53,7 @@ module.exports = async (pluginConfig, ctx) => {
   try {
     const docker = new Dockerode()
     // const baseImageTag = ctx.env.DOCKER_BASE_IMAGE_TAG || pluginConfig.baseImageTag || 'latest'
-    const baseImageTag = ctx.nextRelease.version;
+    const baseImageTag = ctx.nextRelease.channel;
     console.log(`baseImageTag: ${baseImageTag}`);
     console.log(`ctx.nextRelease.version: ${ctx.nextRelease.version}`);
     console.log(`ctx.nextRelease`, ctx.nextRelease);

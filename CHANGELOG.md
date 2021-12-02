@@ -1,3 +1,10 @@
+### [1.2.4](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.3...v1.2.4) (2021-12-02)
+
+
+### Tests
+
+* debug baseImageTag push ([336be71](https://github.com/0-vortex/eclass-docker-fork/commit/336be71c7325a2f71e6ee158409546310cd8bd31))
+
 ### [1.2.3](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.2...v1.2.3) (2021-12-02)
 
 

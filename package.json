@@ -1,6 +1,6 @@
 {
   "name": "eclass-docker-fork",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "license": "MIT",
   "description": "semantic-release plugin to release a docker container",
   "files": [

@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.7...v1.3.0) (2021-12-03)
+
+
+### Build System
+
+* add node types ([66e73bc](https://github.com/0-vortex/eclass-docker-fork/commit/66e73bca6608be7950e1176b5babe3124387e523))
+
 ### [1.2.7](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.6...v1.2.7) (2021-12-03)
 
 

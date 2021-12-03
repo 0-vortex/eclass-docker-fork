@@ -53,9 +53,6 @@ module.exports = async (pluginConfig, ctx) => {
   try {
     const docker = new Dockerode()
     const baseImageTag = ctx.nextRelease.channel || 'latest';
-    console.log(`baseImageTag: ${baseImageTag}`);
-    console.log(`ctx.nextRelease.version: ${ctx.nextRelease.version}`);
-    console.log(`ctx.nextRelease`, ctx.nextRelease);
 
     const tags = [baseImageTag, ctx.nextRelease.version]
     if (pluginConfig.additionalTags && pluginConfig.additionalTags.length > 0) {
@@ -91,8 +88,6 @@ module.exports = async (pluginConfig, ctx) => {
         }
       }
 
-      console.log(`latestImage: ${latestImage}`);
-      console.log(`latestRegistry: ${latestRegistry}`);
       if (latestImage && latestRegistry) {
         return getReleaseInfo(latestImage, latestRegistry, baseImageTag);
       }

@@ -48,7 +48,6 @@ The plugin can be configured in the [**semantic-release** configuration file](ht
 | Variable         | Description |
 | ---------------- | ----------- |
 | `baseImageName`  | Name of the previously constructed docker image. Required. |
-| `baseImageTag`   | Name of the previously constructed docker image tag. Optional. Default `"latest"` |
 | `registries`     | Array of [Registry](#registry) objects. Required. Example: {"user": "DOCKER_USER", "password": "DOCKER_PASSWORD", "url": "docker.pkg.github.com", "imageName": "docker.pkg.github.com/myuser/myrepo/myapp"} |
 | `additionalTags` | Array of additional tags to push. Optional. Example: `["beta", "next"]` |
 
@@ -70,7 +69,6 @@ Environment variables are variables. Depends of `registries` option.
 | ----------------------- | ----------------------------- |
 | `DOCKER_USER`           | username for docker registry. |
 | `DOCKER_PASSWORD`       | password for docker registry. |
-| `DOCKER_BASE_IMAGE_TAG` | Name of the previously constructed docker image tag. Optional. Default `"latest"`. |
 
 ### Examples
 

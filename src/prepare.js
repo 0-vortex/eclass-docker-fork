@@ -22,8 +22,7 @@ module.exports = async (pluginConfig, ctx) => {
     if (pluginConfig.additionalTags && pluginConfig.additionalTags.length > 0) {
       tags.push(...pluginConfig.additionalTags)
     }
-    // const baseImageTag = ctx.env.DOCKER_BASE_IMAGE_TAG || pluginConfig.baseImageTag || 'latest'
-    const baseImageTag = ctx.nextRelease.channel;
+    const baseImageTag = ctx.nextRelease.channel || 'latest';
     for (const tag of tags) {
       ctx.logger.log(
         `Tagging docker image ${pluginConfig.baseImageName}:${baseImageTag} to ${pluginConfig.baseImageName}:${tag}`

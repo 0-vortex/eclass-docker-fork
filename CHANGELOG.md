@@ -1,3 +1,10 @@
+### [1.2.6](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.5...v1.2.6) (2021-12-03)
+
+
+### Bug Fixes
+
+* correct docker tagging process ([1a5ec75](https://github.com/0-vortex/eclass-docker-fork/commit/1a5ec7599365971f1dab3edfff66e27d1df24388))
+
 ### [1.2.5](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.4...v1.2.5) (2021-12-02)
 
 

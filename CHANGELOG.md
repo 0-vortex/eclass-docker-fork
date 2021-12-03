@@ -1,3 +1,10 @@
+### [1.2.7](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.6...v1.2.7) (2021-12-03)
+
+
+### Bug Fixes
+
+* proper channel tag fix and remove config value ([f0bc638](https://github.com/0-vortex/eclass-docker-fork/commit/f0bc638d716c8d354aabfbbb89e64eed42eee7c8))
+
 ### [1.2.6](https://github.com/0-vortex/eclass-docker-fork/compare/v1.2.5...v1.2.6) (2021-12-03)
 
 

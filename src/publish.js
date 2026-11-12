@@ -67,7 +67,10 @@ module.exports = async (pluginConfig, ctx) => {
         ctx
       )
       const image = docker.getImage(imageName)
-      const options = {
+      // dockerode sends `authconfig` as the X-Registry-Auth header. Passed as plain push options,
+      // the credentials only reached the query string and the request body, which Docker Engine
+      // >= 28.3.3 no longer reads, so the push went out anonymously and the registry refused it.
+      const authconfig = {
         password: password,
         serveraddress: url,
         username: user
@@ -75,7 +78,7 @@ module.exports = async (pluginConfig, ctx) => {
       for (const tag of tags) {
         if (isTagPushAllowed(tag, registry)) {
           ctx.logger.log(`Pushing docker image ${imageName}:${tag}`)
-          const response = await image.push({ tag, ...options })
+          const response = await image.push({ tag, authconfig })
           // @ts-ignore
           await pushImage(response)
 

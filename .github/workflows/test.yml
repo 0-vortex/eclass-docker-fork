@@ -1,0 +1,35 @@
+name: "Test"
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node:
+          - 22
+          - 24
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v6
+
+      - name: "🔧 setup node"
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - name: "📦 install dependencies"
+        run: npm ci
+
+      - name: "✅ test"
+        run: npm test

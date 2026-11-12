@@ -1,6 +1,5 @@
 /* eslint-disable security/detect-object-injection */
-const AggregateError = require('aggregate-error')
-
+const toAggregateError = require('./aggregate-error')
 const getError = require('./get-error')
 
 /**
@@ -43,7 +42,7 @@ const getAuth = (user, password, registry, imageName, ctx) => {
     auth.imageName = imageName
   }
   if (errors.length > 0) {
-    throw new AggregateError(errors)
+    throw toAggregateError(errors)
   }
   return auth
 }

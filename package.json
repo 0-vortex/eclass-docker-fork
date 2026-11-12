@@ -30,7 +30,11 @@
   "devDependencies": {
     "@open-sauced/check-engines": "^1.2.0",
     "@open-sauced/conventional-commit": "^1.0.1",
-    "@types/node": "^16.11.11"
+    "@semantic-release/changelog": "^7.0.0",
+    "@semantic-release/git": "^11.0.1",
+    "@types/node": "^16.11.11",
+    "conventional-changelog-conventionalcommits": "^9.3.1",
+    "semantic-release": "^25.0.9"
   },
   "scripts": {
     "test": "node --test test/*.test.js",

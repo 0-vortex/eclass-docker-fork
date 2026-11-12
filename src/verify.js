@@ -1,6 +1,8 @@
 /* eslint-disable sonarjs/cognitive-complexity */
 const AggregateError = require('aggregate-error')
 
+const toAggregateError = require('./aggregate-error')
+const { describeError } = require('./describe-error')
 const getError = require('./get-error')
 const dockerLogin = require('./dockerLogin')
 const getAuth = require('./getAuth')
@@ -39,13 +41,16 @@ module.exports = async (pluginConfig, ctx) => {
             errors.push(individualError)
           }
         } else {
-          errors.push(getError('EDOCKERLOGIN', ctx))
+          // eslint-disable-next-line security/detect-object-injection
+          const reason = `Login to docker registry ${url} failed: ${describeError(err, [ctx.env[password]])}`
+          ctx.logger.error(reason)
+          errors.push(getError('EDOCKERLOGIN', ctx, reason))
         }
       }
     }
   }
   if (errors.length > 0) {
-    throw new AggregateError(errors)
+    throw toAggregateError(errors)
   }
 }
 /* eslint-enable sonarjs/cognitive-complexity */
